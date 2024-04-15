@@ -7,6 +7,7 @@
             body {
                 font-family: 'Courier New', Courier, monospace;
                 text-align: center;
+                background-image: url('pet-background.png');
             }
             #thebox {
                 width: 300px;
@@ -14,6 +15,7 @@
                 border: solid;
                 margin: auto;
                 padding-top: 50px;
+                background-color: white;
             }
             #thepet {
                 width: fit-content;
@@ -21,35 +23,40 @@
                 padding: 5px;
                 border: solid;
                 margin: auto;
-                
+                background-color: white;
             }
         </style>
         <meta charset="UTF-8">
-        
-
-
     </head>
     <body>
         <div id="thebox">
             <div id="thepet">
-                <img src="kitty.png" id="kitty">
+                <img src="kitty.png" id="kitty" ondrop="drop(event, this)" ondragover="allowDrop(event)">
                 <p id="catreact">meow</p>
             </div>
 
-            <p id="instruction"> this is your NEW PET!!!!!! press a button to take such good care of it...</p>
-            <img src="bed.png"
-            id="bed"
-            height = "50px"
-            width = "50px">
-            <img src="foodbowl.png"
-            id="food"
-            height = "50px"
-            width = "50px">
-            <img src="yarn.png"
-            id="yarn"
-            height = "50px"
-            width = "50px">
-            <p>sleep! food! play!</p>
+            <p id="instruction"> this is your NEW PET!!!!!! drag an item to the pet to take such good care of it...</p>
+            <div ondrop="drop(event)" ondragover="allowDrop(event)"> 
+                <img src="bed.png"
+                id="bed"
+                height = "50px"
+                width = "50px"
+                draggable="true" ondragstart="drag(event)">
+                <img src="foodbowl.png"
+                id="food"
+                height = "50px"
+                width = "50px"
+                draggable="true" ondragstart="drag(event)">
+                <img src="yarn.png"
+                id="yarn"
+                height = "50px"
+                width = "50px"
+                draggable="true" ondragstart="drag(event)">
+                <p>sleep! food! play!</p>
+                <button onClick="window.location.reload();">replenish items?</button>
+                <br>
+                <br>
+            </div>
         </div>
 
 
